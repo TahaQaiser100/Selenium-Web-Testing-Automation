@@ -1,25 +1,25 @@
 pipeline {
-    agent{
-        docker {
-            image 'maven:3.9.16-eclipse-temurin-11-alpine'
-        }
-    }
-
+    agent any
+    
     stages {
-        stage('Build'){
-            steps{
+        stage('Build') {
+            steps {
                 echo "Build Stage"
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
-
         }
-        stage('Run Tests'){
-            steps{
+        
+        stage('Run Tests') {
+            steps {
                 echo "Run tests"
-                sh 'mvn test'
+                bat 'mvn test'
             }
-
         }
     }
-
+    
+    post {
+        always {
+            junit 'target/surefire-reports/*.xml'
+        }
+    }
 }
