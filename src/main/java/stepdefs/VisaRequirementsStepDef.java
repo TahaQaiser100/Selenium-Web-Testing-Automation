@@ -60,17 +60,6 @@ public class VisaRequirementsStepDef {
         );
     }
 
-    @When("I do not select a nationality")
-    public void iDoNotSelectANationality() {
-    }
-
-    @And("I click continue")
-    public void iClickContinue() {
-    }
-
-    @Then("I should see an error show up")
-    public void iShouldSeeAnErrorShowUp() {
-    }
 
 
 

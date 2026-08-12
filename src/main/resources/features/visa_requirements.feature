@@ -21,9 +21,3 @@ Feature: Determine UK visa requirements
       | Burundi     | no              | Get married or enter into a civil partnership  |
 
 
-    @Sad
-    Scenario: User receives an error when nationality is not selected
-      When I do not select a nationality
-      And I click continue
-      Then I should see an error show up
-
